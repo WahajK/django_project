@@ -28,7 +28,7 @@ List<Product> dummyData = [
     totalRating: 5.0,
     avaliableColors: _dummyColors,
     images: [
-      'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/414a0af449a94f17b0eead8f00ebaea2_9366/NMD_R1_Shoes_Beige_GZ8025_01_standard.jpg',
+      'images/wall.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/aaa48ab17a614954990ead8f00ebc345_9366/NMD_R1_Shoes_Beige_GZ8025_02_standard_hover.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ada2de65b7fa474a9b13ad8f00ebcc82_9366/NMD_R1_Shoes_Beige_GZ8025_03_standard.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b9905fb1a9bb43ee9c6ead8f00ebd481_9366/NMD_R1_Shoes_Beige_GZ8025_04_standard.jpg',

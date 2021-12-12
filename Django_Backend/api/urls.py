@@ -13,7 +13,13 @@ urlpatterns = [
     path('template', TemplateView.as_view(template_name="home.html"), name='home'),
     path('user/<str:uname>',views.getSingleUser),
     path('user/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
-    path('sendEmail/',views.SendFormEmail.as_view)
+    path('sendEmail/',views.SendFormEmail.as_view),
+    path('worker/',views.getWorkers),
+    path('worker/create/',views.createWorker),
+    path('worker/<str:uname>/update/',views.updateWorker),
+    path('worker/<str:uname>/delete/',views.deleteWorker),
+    path('worker/<str:uname>',views.getSingleWorker),
+    # path('worker/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "cross_file",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3",
       "packageUri": "lib/",
@@ -86,6 +92,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_rating_bar",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_rating_bar-4.0.0",
       "packageUri": "lib/",
@@ -124,6 +136,24 @@
     {
       "name": "http_parser",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image_picker",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.5+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image_picker_for_web",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_for_web-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image_picker_platform_interface",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -392,7 +422,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-10T12:35:51.505907Z",
+  "generated": "2021-12-12T14:40:02.467643Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }

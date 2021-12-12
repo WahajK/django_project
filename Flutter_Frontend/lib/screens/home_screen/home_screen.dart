@@ -1,15 +1,10 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:path/path.dart';
-import 'package:untitled/models/login_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled/models/shoes_brend.dart';
 import 'package:untitled/screens/home_screen/components/grid_card.dart';
 import 'package:untitled/screens/home_screen/logic/brand_name_string.dart';
 import 'package:untitled/screens/home_screen/logic/get_list.dart';
 
-
-String url = "http://10.0.2.2:8000/login/";
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -18,43 +13,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  
   ShoesBrand model = ShoesBrand.all;
   var currentCategory = 0;
-
-  List<User> login = [];
-  String test='';
-  final usernamecontroller = TextEditingController();
-  final passcontroller = TextEditingController();
-  static get http => null;
-  @override
-  void initState()
-  {
-    _retrieveLogin();
-    super.initState();
-  }
-
-  @override
-  void didChangeDependencies(){
-    _retrieveLogin();
-    super.didChangeDependencies();
-  }
-  _retrieveLogin() async
-  {
-    login = [];
-    Response uri = await get(Uri.parse(url));
-    List response = json.decode((uri.body));
-    response.forEach((element) {
-      login.add(User.fromMap(element));
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     var list = getProductFor(model: model);
 
+
     return CustomScrollView(
-      slivers: [
+
+      slivers:
+      [
+         SliverAppBar(
+           backgroundColor: Colors.blue,
+           automaticallyImplyLeading: false,
+          pinned: false,
+          expandedHeight: 25,
+          flexibleSpace: FlexibleSpaceBar(
+            centerTitle: true,
+            title: Text('Shoes Shop'),
+          ),
+        ),
         SliverToBoxAdapter(
           child: SizedBox(
             height: 80,

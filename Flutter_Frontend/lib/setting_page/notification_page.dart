@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_screens/src/settings.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:untitled/icon_widget.dart';
 
 class notificationpage extends StatelessWidget {
+
   static const keyNews= 'key-news';
   static const keyActivity= 'key-activity';
   static const keyEmail =' email';

@@ -1,4 +1,3 @@
-from typing_extensions import Required
 from django.db import models
 from django.db.models.fields.reverse_related import ManyToOneRel
 from django.dispatch import receiver
@@ -10,10 +9,9 @@ import datetime
 import os
 
 # Create your models here.
-def upload_to_user(instance, filename):
+def upload_to(instance, filename):
     return 'user/{filename}'.format(filename=filename)
-def upload_to_worker(instance, filename):
-    return 'worker/{filename}'.format(filename=filename)
+
 CATEGORY_CHOICES = (
     ('engineer','ENGINEER'),
     ('plumber', 'PLUMBER'),
@@ -34,28 +32,28 @@ CATEGORY_CHOICES = (
     ('maid','MAID'),
 )
 class user(models.Model):
-    username = models.TextField(unique=True,primary_key=True,on_delete=models.CASCADE)
+    username = models.TextField(unique=True,primary_key=True)
     email = models.TextField(unique=True,null=False)
     fname = models.TextField(null=False)
     lname = models.TextField()
     contact = models.TextField(null=False)
     address = models.TextField()
     password = models.TextField(null=False)
-    image = models.ImageField(upload_to=upload_to_user,null=True,blank=True,default='media/default.jpg')
+    image = models.ImageField(upload_to=upload_to,null=True,blank=True,default='media/default.jpg')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     # user_id = models.AutoField(auto_created=True,primary_key=True)
 
 
 class worker(models.Model):
-    username = models.TextField(unique=True,primary_key=True,on_delete=models.CASCADE)
+    username = models.TextField(unique=True,primary_key=True)
     email = models.TextField(unique=True,null=False)
     fname = models.TextField(null=False)
     lname = models.TextField()
     contact = models.TextField(null=False)
-    category = models.CharField(choices=CATEGORY_CHOICES,null=False)
+    category = models.CharField(choices=CATEGORY_CHOICES,null=False,max_length=255)
     password = models.TextField(null=False)
-    image = models.ImageField(upload_to=upload_to_worker,null=True,blank=True,default='media/default.jpg')
+    image = models.ImageField(upload_to=upload_to,null=True,blank=True,default='media/default.jpg')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     # worker_id = models.AutoField(auto_created=True,primary_key=True)
@@ -63,28 +61,28 @@ class worker(models.Model):
     # average_rates = models.FloatField()
 
 class appointment(models.Model):
-    category = models.CharField(choices=CATEGORY_CHOICES,null=False)
-    u_username = models.ForeignKey(user, related_name='username', on_delete=models.CASCADE)
-    w_username = models.ForeignKey(worker, related_name='username', on_delete=models.CASCADE)
-    appointment_id = models.AutoField(auto_created=True,primary_key=True)
+    category = models.CharField(choices=CATEGORY_CHOICES,null=False,max_length=255)
+    u_username = models.ForeignKey(user, on_delete=models.CASCADE)
+    w_username = models.ForeignKey(worker, on_delete=models.CASCADE)
+    appointment_id = models.AutoField(auto_created=True,primary_key=True,default=1)
     timing = models.TimeField()
-    status = models.BooleanField()#Change to options
+    status = models.BooleanField() #Change to options
     description = models.TextField(null=False)
-    start_date = models.DateTimeField(auto_now=True)
+    start_date = models.DateTimeField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     
 class payment(models.Model):
     total = models.FloatField(null=False) 
     method = models.TextField(null=False)
-    payment_id = models.AutoField(auto_created=True,primary_key=True)
+    payment_id = models.AutoField(auto_created=True,primary_key=True,default=1)
     
 class service(models.Model):
-    service_id = models.AutoField(primary_key=True,auto_created=True) 
+    service_id = models.AutoField(primary_key=True,auto_created=True,default=1) 
     name = models.TextField(null=False)
 
 class feedback(models.Model):
-    feedback_id = models.AutoField(primary_key=True,auto_created=True) 
+    feedback_id = models.AutoField(primary_key=True,auto_created=True,default=1) 
     rating = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
     comments = models.TextField()
 

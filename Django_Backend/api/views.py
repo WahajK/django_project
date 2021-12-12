@@ -51,6 +51,7 @@ def createUser(request):
         email = tempE,
         fname = data['fname'],
         lname = data['lname'],
+        contact = data['contact'],
         image = data['image'],
         address = data['address'],
     )
@@ -132,10 +133,9 @@ def createWorker(request):
         fname = data['fname'],
         lname = data['lname'],
         image = data['image'],
-        address = data['address'],
         category = data['category'],
     )
-    serializer = workerSerializer(worker,many = False)
+    serializer = workerSerializer(Worker,many = False)
     return Response(serializer.data)
 
 @api_view(['PUT'])#PUT FOR UPDATE
@@ -148,3 +148,9 @@ def updateWorker(request,uname):
         serializer.save()
     
     return Response(serializer.data)
+
+@api_view(['DELETE'])
+def deleteWorker(request,uname):
+    Worker = worker.objects.get(username=uname)
+    Worker.delete()
+    return Response('User was deleted')

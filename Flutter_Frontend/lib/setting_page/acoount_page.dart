@@ -6,7 +6,7 @@ class accountpage extends StatelessWidget {
   static const keyPassword = 'key-password';
   @override
   Widget build(BuildContext context)=>SimpleSettingsTile(
-      title: 'Account Settings',
+    title: 'Account Settings',
   subtitle: 'Privacy,Security,Account Info',
   leading:
     IconWidget(icon: Icons.person, color: Colors.green),

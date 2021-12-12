@@ -75,7 +75,7 @@ class _GridCardState extends State<GridCard> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     image: DecorationImage(
-                      image: NetworkImage(
+                      image: AssetImage(
                         widget.product.images[0],
                       ),
                       fit: BoxFit.cover,

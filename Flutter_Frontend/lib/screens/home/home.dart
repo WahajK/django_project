@@ -5,7 +5,6 @@ import 'package:untitled/screens/default_screen/default_screen.dart';
 import 'package:untitled/screens/home_screen/home_screen.dart';
 import 'package:untitled/setting_page/setting_screen.dart';
 
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -90,7 +89,7 @@ class _HomeState extends State<Home> {
                 selectedColor: Colors.white,
               ),
               DotNavigationBarItem(
-                icon: const Icon(Icons.person_outline_rounded),
+                icon: const Icon(Icons.settings),
                 selectedColor: Colors.white,
               ),
             ],

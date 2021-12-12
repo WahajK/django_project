@@ -11,12 +11,13 @@ class settingpage extends StatefulWidget{
 class _settingpagestate extends State<settingpage>{
   @override
   Widget build(BuildContext context) => Scaffold(
-    // appBar: AppBar(title: Text('Settings'),
-    // centerTitle:true,),
+    appBar: AppBar(title: Text('Settings'),
+    centerTitle:true,),
     body: SafeArea(
         child: ListView(
           padding: EdgeInsets.all(24),
           children: [
+
             SettingsGroup(title: 'General', children: <Widget>[
               accountpage(),
               notificationpage(),
