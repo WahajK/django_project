@@ -4,12 +4,13 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled/models/product.dart';
+import 'package:untitled/models/worker_model.dart';
 import 'package:untitled/screens/product_detail_screen/product_detail_screen.dart';
 
 class GridCard extends StatefulWidget {
-  final Product product;
+  final Worker workers;
 
-  const GridCard({Key? key, required this.product}) : super(key: key);
+  const GridCard({required this.workers}) ;
 
   @override
   State<GridCard> createState() => _GridCardState();
@@ -20,7 +21,7 @@ class _GridCardState extends State<GridCard> {
 
   @override
   void initState() {
-    _isFavorite = widget.product.isFavorite;
+    // _isFavorite = widget.product.isFavorite;
     super.initState();
   }
 
@@ -28,11 +29,11 @@ class _GridCardState extends State<GridCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (ctx) => ProductDetailScreen(product: widget.product),
-          ),
-        );
+        // Navigator.of(context).push(
+        //   MaterialPageRoute(
+        //     builder: (ctx) => ProductDetailScreen(product: widget.product),
+        //   ),
+        // );
       },
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -48,7 +49,7 @@ class _GridCardState extends State<GridCard> {
             Row(
               children: [
                 SvgPicture.asset(
-                  widget.product.logoUrl,
+                  widget.workers.image,
                   height: 20,
                   width: 20,
                 ),
@@ -59,24 +60,24 @@ class _GridCardState extends State<GridCard> {
                   width: 18,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  widget.product.totalRating.toString(),
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                // Text(
+                //   widget.workers.fname,
+                //   style: const TextStyle(
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
               ],
             ),
             Expanded(
               child: Hero(
-                tag: widget.product.images[0],
+                tag: widget.workers.image,
                 child: Container(
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage(
-                        widget.product.images[0],
+                      image: AssetImage(      ///changes image
+                        widget.workers.image,
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -89,9 +90,9 @@ class _GridCardState extends State<GridCard> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '€${widget.product.price.toString()}',
-                      style: const TextStyle(
+                    const Text(
+                      '€100',
+                      style: TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 18,
                       ),
@@ -99,7 +100,7 @@ class _GridCardState extends State<GridCard> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .25,
                       child: Text(
-                        widget.product.name,
+                        widget.workers.fname,
                         style: const TextStyle(
                           color: Colors.grey,
                         ),

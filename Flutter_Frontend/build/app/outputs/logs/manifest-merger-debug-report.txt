@@ -6,8 +6,11 @@ INJECTED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\
 INJECTED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from [:shared_preferences_android] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\699f67f2d72ad9902250b3e1c41f0647\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -19,8 +22,8 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\WahajK\.gradle\cache
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\a861f0b05a17132e2f96ff286e3c4f23\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 INJECTED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -42,6 +45,8 @@ INJECTED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\
 		ADDED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\main\AndroidManifest.xml:1:11-69
 application
 ADDED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\main\AndroidManifest.xml:3:4-40:19
+MERGED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
 MERGED from [androidx.core:core:1.6.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.6.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
@@ -100,10 +105,16 @@ INJECTED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\
 INJECTED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\main\AndroidManifest.xml
 MERGED from [:shared_preferences_android] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\699f67f2d72ad9902250b3e1c41f0647\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\699f67f2d72ad9902250b3e1c41f0647\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:20:5-44
@@ -126,10 +137,10 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\WahajK\.
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\WahajK\.gradle\caches\transforms-2\files-2.1\a861f0b05a17132e2f96ff286e3c4f23\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -146,3 +157,27 @@ uses-permission#android.permission.INTERNET
 ADDED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\android\app\src\debug\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+	android:grantUriPermissions
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+	android:authorities
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+	android:exported
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+	android:name
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+	android:resource
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+	android:name
+		ADDED from [:image_picker] E:\UniStuff\Semester 5\DB Theory\Project\Flutter_Frontend\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67

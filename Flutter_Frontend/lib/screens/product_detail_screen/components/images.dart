@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'detail_app_bar.dart';
 
 class DetailScreenImages extends StatefulWidget {
@@ -80,7 +79,7 @@ class _DetailScreenImagesState extends State<DetailScreenImages> {
                     child: currentIndex == i
                         ? Hero(
                             tag: widget.images[0],
-                            child: Image.network(
+                            child: Image.asset(
                               widget.images[i],
                               fit: BoxFit.cover,
                             ),

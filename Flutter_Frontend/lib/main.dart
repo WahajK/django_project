@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:untitled/UI/input_field.dart';
 import 'package:untitled/models/login_model.dart';
+import 'package:untitled/models/worker_model.dart';
 import 'package:untitled/resetpassword.dart';
 import 'package:untitled/UI/signup_page.dart';
 import 'package:http/http.dart';
-import 'package:untitled/screens/home/home.dart';
+import 'package:untitled/home_page.dart';
 import 'package:untitled/userpref.dart';
 
 //GLOBAL VARIABLE
-String url = "http://10.0.2.2:8000/user/";
+String url_user = "http://10.0.2.2:8000/user/";
+String url_worker = "http://10.0.2.2:8000/worker/";
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -50,10 +52,11 @@ class HomeScreen extends StatefulWidget {
   @override
   HomeScreenState createState() => HomeScreenState();
 }
-
+List<User> users = [];
+List<Worker> workers = [];
 
 class HomeScreenState extends State<HomeScreen> {
-  List<User> login = [];
+  
   String test='';
   final usernamecontroller = TextEditingController();
   final passcontroller = TextEditingController();
@@ -61,22 +64,33 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   void initState()
   {
-    _retrieveLogin();
+    _retrieveWorker();
+    _retrieveUsers();
     super.initState();
   }
 
   @override
   void didChangeDependencies(){
-    _retrieveLogin();
+    _retrieveUsers();
+    _retrieveWorker();
     super.didChangeDependencies();
   }
-  _retrieveLogin() async
+  _retrieveWorker() async
   {
-    login = [];
-    Response uri = await get(Uri.parse(url));
+    workers = [];
+    Response uri = await get(Uri.parse(url_worker));
     List response = json.decode((uri.body));
     response.forEach((element) {
-      login.add(User.fromMap(element));
+      workers.add(Worker.fromMap(element));
+    });
+  }
+  _retrieveUsers() async
+  {
+    users = [];
+    Response uri = await get(Uri.parse(url_user));
+    List response = json.decode((uri.body));
+    response.forEach((element) {
+      users.add(User.fromMap(element));
     });
   }
 
@@ -193,17 +207,21 @@ class HomeScreenState extends State<HomeScreen> {
                   Spacer(),
                   InkWell(
                     onTap: () {
-                      bool temp=false;
-                      for(var map in login)
+                      bool temp=true;
+                      for (int i = 0;i<workers.length;i++)
                       {
-                        debugPrint(map.username);
-                        if(map.username.toLowerCase()==usernamecontroller.text.toLowerCase() && map.password==passcontroller.text)
-                        {
-                          temp=true;
+                        print(workers[i].fname);
+                      }
+                      // for(var map in login)
+                      // {
+                      //   debugPrint(map.username);
+                      //   if(map.username.toLowerCase()==usernamecontroller.text.toLowerCase() && map.password==passcontroller.text)
+                      //   {
+                      //     temp=true;
                           Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => Home()));
-                        }
-                      }
+                     //   }
+                      //}
                       if(temp==false)
                       {
                         const snackBar=SnackBar(content:Text('Wrong Username/Password'));

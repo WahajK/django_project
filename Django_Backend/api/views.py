@@ -119,6 +119,12 @@ def getSingleWorker(request,uname):
     serializer = workerSerializer(Worker,many=False)
     return Response(serializer.data)
 
+@api_view(['GET'])#GET FOR RETRIEVE 
+def getSingleWorkerName(request,uname):
+    Worker = worker.objects.get(fname=uname)
+    serializer = workerSerializer(Worker,many=False)
+    return Response(serializer.data)
+
 @api_view(['POST'])#POST FOR ADD
 def createWorker(request):
     data = request.data

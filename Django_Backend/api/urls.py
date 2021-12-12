@@ -19,6 +19,7 @@ urlpatterns = [
     path('worker/<str:uname>/update/',views.updateWorker),
     path('worker/<str:uname>/delete/',views.deleteWorker),
     path('worker/<str:uname>',views.getSingleWorker),
+    path('workerbyname/<str:uname>',views.getSingleWorkerName),
     # path('worker/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
 ]
 
