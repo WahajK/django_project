@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:untitled/models/product.dart';
+import 'package:untitled/main.dart';
 import 'package:untitled/models/worker_model.dart';
-import 'package:untitled/screens/product_detail_screen/product_detail_screen.dart';
 
 class GridCard extends StatefulWidget {
   final Worker workers;
 
-  const GridCard({required this.workers}) ;
+  const GridCard({required this.workers});
 
   @override
   State<GridCard> createState() => _GridCardState();
@@ -49,7 +48,7 @@ class _GridCardState extends State<GridCard> {
             Row(
               children: [
                 SvgPicture.asset(
-                  widget.workers.image,
+                  widget.workers.image.substring(1,widget.workers.image.length),
                   height: 20,
                   width: 20,
                 ),
@@ -70,14 +69,14 @@ class _GridCardState extends State<GridCard> {
             ),
             Expanded(
               child: Hero(
-                tag: widget.workers.image,
+                tag: widget.workers.image.substring(1,widget.workers.image.length),
                 child: Container(
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     image: DecorationImage(
                       image: AssetImage(      ///changes image
-                        widget.workers.image,
+                        widget.workers.image.substring(1,widget.workers.image.length),
                       ),
                       fit: BoxFit.cover,
                     ),

@@ -199,7 +199,7 @@ class HomeScreenState extends State<HomeScreen> {
           InkWell(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: const <Widget>[
                 Text("Don't have an account ?"),
                 Text("Sign Up",style: TextStyle(color: Color(0xff6bceff)),),
               ],

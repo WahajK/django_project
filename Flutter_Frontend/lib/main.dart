@@ -1,18 +1,21 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:untitled/UI/input_field.dart';
-import 'package:untitled/models/login_model.dart';
+import 'package:untitled/models/user_model.dart';
 import 'package:untitled/models/worker_model.dart';
+import 'package:untitled/profile_page/userpref.dart';
 import 'package:untitled/resetpassword.dart';
 import 'package:untitled/UI/signup_page.dart';
 import 'package:http/http.dart';
 import 'package:untitled/home_page.dart';
-import 'package:untitled/userpref.dart';
 
 //GLOBAL VARIABLE
-String url_user = "http://10.0.2.2:8000/user/";
+String url_user = "http://10.0.2.2:8000/user/"+usernamecontroller.text;
 String url_worker = "http://10.0.2.2:8000/worker/";
+final usernamecontroller = TextEditingController();
+final passcontroller = TextEditingController();
+List<User> users = [];
+List<Worker> workers = [];
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -52,14 +55,12 @@ class HomeScreen extends StatefulWidget {
   @override
   HomeScreenState createState() => HomeScreenState();
 }
-List<User> users = [];
-List<Worker> workers = [];
+
 
 class HomeScreenState extends State<HomeScreen> {
   
   String test='';
-  final usernamecontroller = TextEditingController();
-  final passcontroller = TextEditingController();
+  
   static get http => null;
   @override
   void initState()
@@ -83,6 +84,7 @@ class HomeScreenState extends State<HomeScreen> {
     response.forEach((element) {
       workers.add(Worker.fromMap(element));
     });
+    workers.toSet().toList();
   }
   _retrieveUsers() async
   {
@@ -92,6 +94,7 @@ class HomeScreenState extends State<HomeScreen> {
     response.forEach((element) {
       users.add(User.fromMap(element));
     });
+    users.toSet().toList();
   }
 
   @override
@@ -207,21 +210,21 @@ class HomeScreenState extends State<HomeScreen> {
                   Spacer(),
                   InkWell(
                     onTap: () {
-                      bool temp=true;
-                      for (int i = 0;i<workers.length;i++)
-                      {
-                        print(workers[i].fname);
-                      }
-                      // for(var map in login)
+                      bool temp=false;
+                      // for (int i = 0;i<workers.length;i++)
                       // {
-                      //   debugPrint(map.username);
-                      //   if(map.username.toLowerCase()==usernamecontroller.text.toLowerCase() && map.password==passcontroller.text)
-                      //   {
-                      //     temp=true;
+                      //   print(workers[i].fname);
+                      // }
+                      for(var map in users)
+                      {
+                        debugPrint(map.username);
+                        if(map.username.toLowerCase()==usernamecontroller.text.toLowerCase() && map.password==passcontroller.text)
+                        {
+                          temp=true;
                           Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => Home()));
-                     //   }
-                      //}
+                        }
+                      }
                       if(temp==false)
                       {
                         const snackBar=SnackBar(content:Text('Wrong Username/Password'));

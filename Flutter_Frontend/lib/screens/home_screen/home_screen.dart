@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:untitled/models/shoes_brend.dart';
+import 'package:untitled/models/worker_category.dart';
 import 'package:untitled/models/worker_model.dart';
 import 'package:untitled/screens/home_screen/components/grid_card.dart';
 import 'package:untitled/screens/home_screen/logic/brand_name_string.dart';
-import 'package:untitled/screens/home_screen/logic/get_list.dart';
 import 'package:untitled/main.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,14 +13,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ShoesBrand model = ShoesBrand.all;
   Worker_enum worker_model = Worker_enum.all;
   var currentCategory = 0;
 
   @override
   Widget build(BuildContext context) {
     List<Worker> workers = _getWorkers(category: worker_model);
-    var list = getProductFor(model: model);
 
     return CustomScrollView(
 
@@ -35,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           expandedHeight: 25,
           flexibleSpace: FlexibleSpaceBar(
             centerTitle: true,
-            title: Text('Shoes Shop'),
+            title: Text('United Pak'),
           ),
         ),
         SliverToBoxAdapter(
@@ -117,7 +113,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.engineer) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.engineer) {
+      if (element.category == 'engineer') 
+      {
         filter_worker.add(element);
       }
     }
@@ -125,7 +122,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.plumber) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.plumber) {
+      if (element.category == 'plumber') 
+      {
         filter_worker.add(element);
       }
     }
@@ -133,7 +131,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.doctor) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.doctor) {
+      if (element.category == 'doctor') 
+      {
         filter_worker.add(element);
       }
     }
@@ -141,7 +140,7 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.carpenter) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.carpenter) 
+      if (element.category == 'carpenter') 
       {
         filter_worker.add(element);
       }
@@ -150,7 +149,7 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.electrician) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.electrician) 
+      if (element.category == 'electrician') 
       {
         filter_worker.add(element);
       }
@@ -158,7 +157,7 @@ List<Worker> _getWorkers({required Worker_enum category})
   }
   else if (category == Worker_enum.painter) {
     for (var element in workers) {
-      if (element.category == Worker_enum.painter) 
+      if (element.category == 'painter') 
       {
         filter_worker.add(element);
       }
@@ -167,7 +166,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.barber) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.barber) {
+      if (element.category == 'barber') 
+      {
         filter_worker.add(element);
       }
     }
@@ -175,7 +175,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.house_constructor) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.house_constructor) {
+      if (element.category == 'house_constructor') 
+      {
         filter_worker.add(element);
       }
     }
@@ -183,7 +184,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.mason) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.mason) {
+      if (element.category == 'mason') 
+      {
         filter_worker.add(element);
       }
     }
@@ -191,7 +193,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.gardener) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.gardener) {
+      if (element.category == 'gardener') 
+      {
         filter_worker.add(element);
       }
     }
@@ -199,7 +202,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.cctv_installation) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.cctv_installation) {
+      if (element.category == 'cctv_installation') 
+      {
         filter_worker.add(element);
       }
     }
@@ -207,7 +211,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.roofing_ceiling) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.roofing_ceiling) {
+      if (element.category == 'roofing_ceiling') 
+      {
         filter_worker.add(element);
       }
     }
@@ -215,7 +220,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.welder) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.welder) {
+      if (element.category == 'welder') 
+      {
         filter_worker.add(element);
       }
     }
@@ -223,7 +229,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.tailor) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.tailor) {
+      if (element.category == 'tailor') 
+      {
         filter_worker.add(element);
       }
     }
@@ -231,7 +238,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.ac_geyser_installation) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.ac_geyser_installation) {
+      if (element.category == 'ac_geyser_installation') 
+      {
         filter_worker.add(element);
       }
     }
@@ -239,7 +247,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.mobile_repair) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.mobile_repair) {
+      if (element.category == 'mobile_repair') 
+      {
         filter_worker.add(element);
       }
     }
@@ -247,7 +256,8 @@ List<Worker> _getWorkers({required Worker_enum category})
   else if (category == Worker_enum.maid) 
   {
     for (var element in workers) {
-      if (element.category == Worker_enum.maid) {
+      if (element.category == 'maid') 
+      {
         filter_worker.add(element);
       }
     }
