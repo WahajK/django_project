@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/main.dart';
-import 'package:untitled/UI/input_field.dart';
-import 'package:untitled/resetpassword.dart';
-import 'package:untitled/UI/signup_page.dart';
+import 'package:untitled/screens/login_signup/resetpassword.dart';
 import 'package:flutter/services.dart';
 
 
@@ -28,7 +26,7 @@ class _resetPageState extends State<reset_page> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height/3.5,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -43,7 +41,7 @@ class _resetPageState extends State<reset_page> {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: const <Widget>[
                   Spacer(),
                   Align(
                     alignment: Alignment.center,
@@ -56,7 +54,7 @@ class _resetPageState extends State<reset_page> {
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(
+                      padding: EdgeInsets.only(
                           bottom: 22,
                           right: 32
                       ),
@@ -81,10 +79,10 @@ class _resetPageState extends State<reset_page> {
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -96,7 +94,7 @@ class _resetPageState extends State<reset_page> {
                           )
                         ]
                     ),
-                    child: TextField(
+                    child: const TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(Icons.mail,
@@ -118,7 +116,7 @@ SizedBox(height: 20,),
 
                       height: 45,
                       width: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
                               Color(0xff6bceff),
@@ -131,7 +129,7 @@ SizedBox(height: 20,),
                       ),
                       child: Center(
                         child: Text('Send Mail'.toUpperCase(),
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold
                           ),
@@ -150,7 +148,7 @@ SizedBox(height: 20,),
               child: Container(
                 height: 45,
                 width: 200,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
                         Color(0xff6bceff),
@@ -163,7 +161,7 @@ SizedBox(height: 20,),
                 ),
                 child: Center(
                   child: Text('Login'.toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold
                     ),

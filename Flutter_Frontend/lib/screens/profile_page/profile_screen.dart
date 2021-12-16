@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:untitled/profile_page/profile_widget.dart';
-import 'package:untitled/profile_page/user.dart';
-import 'package:untitled/profile_page/userpref.dart';
-import 'package:untitled/setting_page/setting_screen.dart';
+import 'package:untitled/screens/profile_page/profile_widget.dart';
+import 'package:untitled/screens/profile_page/user.dart';
+import 'package:untitled/screens/profile_page/userpref.dart';
 import 'package:untitled/main.dart';
+import 'package:untitled/screens/setting_page/setting_screen.dart';
 
 class editprofile extends StatefulWidget {
 
@@ -109,6 +109,7 @@ class profilepage extends State<editprofile> {
     return Padding(
       padding: const EdgeInsets.only(bottom:25.0),
       child: TextField(
+        // controller: TextEditingController()..text = placeholder,
         obscureText: ispass?showpass:true,
         enabled: isemail,
         decoration: InputDecoration(
@@ -118,7 +119,7 @@ class profilepage extends State<editprofile> {
                   showpass=!showpass;
                 });
               },
-              icon:Icon(Icons.remove_red_eye,color: Colors.grey),
+              icon:const Icon(Icons.remove_red_eye,color: Colors.grey),
 
             ):null,
             contentPadding: const EdgeInsets.only(bottom: 3),

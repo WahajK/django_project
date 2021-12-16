@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
-import 'package:untitled/icon_widget.dart';
-import 'package:untitled/Utils.dart';
-import 'package:untitled/setting_page/acoount_page.dart';
-import 'package:untitled/setting_page/notification_page.dart';
+import 'package:untitled/screens/profile_page/icon_widget.dart';
+import 'package:untitled/screens/setting_page/acoount_page.dart';
+import 'package:untitled/screens/setting_page/notification_page.dart';
 class settingpage extends StatefulWidget{
   @override
   _settingpagestate createState()  => _settingpagestate();

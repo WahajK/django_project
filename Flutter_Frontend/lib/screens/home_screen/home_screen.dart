@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/models/worker_category.dart';
 import 'package:untitled/models/worker_model.dart';
 import 'package:untitled/screens/home_screen/components/grid_card.dart';
-import 'package:untitled/screens/home_screen/logic/brand_name_string.dart';
+import 'package:untitled/screens/home_screen/logic/category_name.dart';
 import 'package:untitled/main.dart';
 
 class HomeScreen extends StatefulWidget {

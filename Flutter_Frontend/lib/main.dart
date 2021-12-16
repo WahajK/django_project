@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:untitled/models/user_model.dart';
 import 'package:untitled/models/worker_model.dart';
-import 'package:untitled/profile_page/userpref.dart';
-import 'package:untitled/resetpassword.dart';
-import 'package:untitled/UI/signup_page.dart';
+import 'package:untitled/screens/login_signup/create.dart';
+import 'package:untitled/screens/login_signup/resetpassword.dart';
 import 'package:http/http.dart';
-import 'package:untitled/home_page.dart';
+import 'package:untitled/screens/home_screen/home_page.dart';
+import 'package:untitled/screens/profile_page/userpref.dart';
 
 //GLOBAL VARIABLE
 String url_user = "http://10.0.2.2:8000/user/"+usernamecontroller.text;

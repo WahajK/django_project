@@ -31,34 +31,52 @@ CATEGORY_CHOICES = (
     ('mobile repair','MOBILE REPAIR'),
     ('maid','MAID'),
 )
+
+STATUS_CHOICES = (
+    ('rejected','REJECTED'),
+    ('completed','COMPLETED'),
+    ('pending','PENDING'),
+    ('on going','ON GOING'),
+    ('on hold','ON HOLD'),
+)
+PAYMENT_STATUS_CHOICES = (
+    ('paid','PAID'),
+    ('unpaid','UNPAID'),
+)
+PAYMENT_CHOICES = (
+    ('bank transfer','BANK TRANSFER'),
+    ('easy paisa','EASY PAISA'),
+    ('cash','CASH'),
+)
 class user(models.Model):
-    username = models.TextField(unique=True,primary_key=True)
+    username = models.TextField(unique=True,primary_key=True,on_delete=models.CASCADE)
     email = models.TextField(unique=True,null=False)
     fname = models.TextField(null=False)
-    lname = models.TextField()
     contact = models.TextField(null=False)
     address = models.TextField()
     password = models.TextField(null=False)
-    image = models.ImageField(upload_to=upload_to,null=True,blank=True,default='media/default.jpg')
+    image = models.ImageField(upload_to=upload_to,null=True,blank=True,default='media/default.jpg',on_delete = models.SET_DEFAULT)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    # user_id = models.AutoField(auto_created=True,primary_key=True)
-
 
 class worker(models.Model):
-    username = models.TextField(unique=True,primary_key=True)
+    username = models.TextField(unique=True,primary_key=True,on_delete=models.CASCADE)
     email = models.TextField(unique=True,null=False)
     fname = models.TextField(null=False)
-    lname = models.TextField()
     contact = models.TextField(null=False)
     category = models.CharField(choices=CATEGORY_CHOICES,null=False,max_length=255)
     password = models.TextField(null=False)
-    image = models.ImageField(upload_to=upload_to,null=True,blank=True,default='media/default.jpg')
+    image = models.ImageField(upload_to=upload_to,null=True,blank=True,default='media/default.jpg',on_delete = models.SET_DEFAULT)
+    rating = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
+    address = models.TextField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    # worker_id = models.AutoField(auto_created=True,primary_key=True)
-    # feedback = models.ForeignKey(feedback)
-    # average_rates = models.FloatField()
+
+class payment(models.Model):
+    total = models.FloatField(null=False) 
+    method = models.TextField(null=False)
+    payment_id = models.AutoField(auto_created=True,primary_key=True,default=1)
+    status = models.TextField(choices=PAYMENT_STATUS_CHOICES,null=False)
 
 class appointment(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES,null=False,max_length=255)
@@ -66,32 +84,22 @@ class appointment(models.Model):
     w_username = models.ForeignKey(worker, on_delete=models.CASCADE)
     appointment_id = models.AutoField(auto_created=True,primary_key=True,default=1)
     timing = models.TimeField()
-    status = models.BooleanField() #Change to options
+    status = models.TextField(choices=STATUS_CHOICES,null=False)
+    payment_status = models.ForeignKey(payment)
     description = models.TextField(null=False)
     start_date = models.DateTimeField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    
-class payment(models.Model):
-    total = models.FloatField(null=False) 
-    method = models.TextField(null=False)
-    payment_id = models.AutoField(auto_created=True,primary_key=True,default=1)
-    
-class service(models.Model):
-    service_id = models.AutoField(primary_key=True,auto_created=True,default=1) 
-    name = models.TextField(null=False)
-
 class feedback(models.Model):
-    feedback_id = models.AutoField(primary_key=True,auto_created=True,default=1) 
+    feedback_id = models.AutoField(primary_key=True,auto_created=True)
     rating = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
     comments = models.TextField()
+    u_username = models.ForeignKey(user, on_delete=models.CASCADE)
+    w_username = models.ForeignKey(worker, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.username[0:50]
-    
-
-    # class Meta:
-    #     ordering = ['-updated']
+class recent(models.Model):
+    u_username = models.ForeignKey(user,on_delete=models.CASCADE)
+    context = models.ForeignKey(worker,to_field="fname")
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):

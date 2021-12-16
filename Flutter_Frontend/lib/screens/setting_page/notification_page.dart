@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/src/settings.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
-import 'package:untitled/icon_widget.dart';
+import 'package:untitled/screens/profile_page/icon_widget.dart';
 
 class notificationpage extends StatelessWidget {
 

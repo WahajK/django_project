@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:untitled/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:untitled/profile_page/user.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:untitled/screens/profile_page/user.dart';
 
 class UserPreferences {
   static late SharedPreferences _preferences;

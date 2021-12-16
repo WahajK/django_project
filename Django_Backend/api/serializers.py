@@ -24,6 +24,16 @@ class feedbackSerializer(ModelSerializer):
         model = feedback
         fields = '__all__'
 
+class recentSerializer(ModelSerializer):
+    class Meta:
+        model = recent
+        fields = '__all__'
+
+class paymentSerializer(ModelSerializer):
+    class Meta:
+        model = payment
+        fields = '__all__'
+
 class ChangePasswordSerializer(serializers.Serializer):
     model = user
     old_password = serializers.CharField(required=True)

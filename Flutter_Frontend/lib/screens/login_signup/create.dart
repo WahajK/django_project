@@ -28,7 +28,7 @@ final formKey =GlobalKey<FormState>();
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height/3.5,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -43,7 +43,7 @@ final formKey =GlobalKey<FormState>();
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: const <Widget>[
                   Spacer(),
                   Align(
                     alignment: Alignment.center,
@@ -57,7 +57,7 @@ final formKey =GlobalKey<FormState>();
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(
+                      padding: EdgeInsets.only(
                           bottom: 32,
                           right: 32
                       ),
@@ -82,10 +82,10 @@ final formKey =GlobalKey<FormState>();
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -97,7 +97,7 @@ final formKey =GlobalKey<FormState>();
                           )
                         ]
                     ),
-                    child: TextField(
+                    child: const TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Full Name',
@@ -105,7 +105,7 @@ final formKey =GlobalKey<FormState>();
                     ),
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
 
@@ -113,10 +113,10 @@ final formKey =GlobalKey<FormState>();
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -128,23 +128,23 @@ final formKey =GlobalKey<FormState>();
                           )
                         ]
                     ),
-                    child: TextField(
+                    child: const TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Username',
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -157,7 +157,7 @@ final formKey =GlobalKey<FormState>();
                         ]
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email',
                       ),
@@ -175,16 +175,16 @@ final formKey =GlobalKey<FormState>();
                       },
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -196,7 +196,7 @@ final formKey =GlobalKey<FormState>();
                           )
                         ]
                     ),
-                    child: TextField(
+                    child: const TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone Number',
@@ -207,10 +207,10 @@ final formKey =GlobalKey<FormState>();
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -222,7 +222,7 @@ final formKey =GlobalKey<FormState>();
                           )
                         ]
                     ),
-                    child: TextField(
+                    child: const TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Address',
@@ -233,10 +233,10 @@ final formKey =GlobalKey<FormState>();
                   Container(
                     width: MediaQuery.of(context).size.width/1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 4,left: 16, right: 16, bottom: 4
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                             Radius.circular(50)
                         ),
@@ -248,7 +248,7 @@ final formKey =GlobalKey<FormState>();
                           )
                         ]
                     ),
-                    child: TextField(
+                    child: const TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -308,7 +308,7 @@ final formKey =GlobalKey<FormState>();
             InkWell(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: const <Widget>[
                   Text("Have an account ?"),
                   Text("Login",style: TextStyle(color: Color(0xff6bceff)),),
                 ],

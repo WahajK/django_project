@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
-import 'package:untitled/icon_widget.dart';
-import 'package:untitled/setting_page/change_password.dart';
+import 'package:untitled/screens/profile_page/icon_widget.dart';
+import 'package:untitled/screens/setting_page/change_password.dart';
 class accountpage extends StatelessWidget {
   static const keyPassword = 'key-password';
   @override

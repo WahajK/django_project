@@ -94,7 +94,6 @@ class SendFormEmail(View):
         messages.success(request, ('Email sent successfully.'))
         return redirect('home') 
 
-
 class ImageUpload(APIView):
     def post(self,request,format=None):
         print(request.data)
@@ -105,8 +104,48 @@ class ImageUpload(APIView):
         else:
             return Response(serializer.errors)
 
-#Worker
+#Recent
+@api_view(['GET'])#GET FOR RETRIEVE
+def getRecent(request,uname):
+    Recent = recent.objects.get(fname=uname)
+    serializer = recentSerializer(Recent,many=True)
+    return Response(serializer.data)
 
+@api_view(['POST'])#POST FOR ADD
+def createRecent(request):
+    data = request.data
+    tempU = str(data['username'])
+    tempU = tempU.lower()
+    Recent = recent.objects.create(
+        username = tempU,
+        context = data['context'],
+    )
+    serializer = recentSerializer(Recent,many = False)
+    return Response(serializer.data)
+
+#Feedback
+@api_view(['GET'])#GET FOR RETRIEVE
+def getFeedback(request,uname):
+    Feedback = feedback.objects.get(fname=uname)
+    serializer = feedbackSerializer(Feedback,many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])#POST FOR ADD
+def createWorker(request):
+    data = request.data
+    tempU = str(data['u_username'])
+    tempU = tempU.lower()
+    tempW = str(data['w_username'])
+    tempW = tempW.lower()
+    Worker = worker.objects.create(
+        u_username = tempU,
+        w_username = tempW,
+        comments = data['comments'],
+        rating = data['rating'],
+    )
+    serializer = workerSerializer(Worker,many = False)
+    return Response(serializer.data)
+#Worker
 @api_view(['GET'])
 def getWorkers(request):
     Worker = worker.objects.all()
@@ -120,9 +159,20 @@ def getSingleWorker(request,uname):
     return Response(serializer.data)
 
 @api_view(['GET'])#GET FOR RETRIEVE 
-def getSingleWorkerName(request,uname):
-    Worker = worker.objects.get(fname=uname)
-    serializer = workerSerializer(Worker,many=False)
+def getManyWorkers(request,uname):
+    Worker = worker.objects.get(string__contains=uname)
+    serializer = workerSerializer(Worker,many=True)
+    return Response(serializer.data)
+
+@api_view(['PUT'])#PUT FOR UPDATE
+def updateUser(request,uname):
+    data = request.data
+    Worker = worker.objects.get(username=uname)
+    
+    serializer = workerSerializer(Worker,data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    
     return Response(serializer.data)
 
 @api_view(['POST'])#POST FOR ADD
@@ -160,3 +210,47 @@ def deleteWorker(request,uname):
     Worker = worker.objects.get(username=uname)
     Worker.delete()
     return Response('User was deleted')
+
+#Appointment
+@api_view(['GET'])
+def getAppointmentsWorker(request,uname):
+    Appointment = appointment.objects.get(w_username=uname)
+    serializer = appointmentSerializer(Appointment,many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getAppointmentsUser(request,uname):
+    Appointment = appointment.objects.get(u_username=uname)
+    serializer = appointmentSerializer(Appointment,many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])#POST FOR ADD
+def createAppointment(request):
+    data = request.data
+    tempU = str(data['u_username'])
+    tempU = tempU.lower()
+    tempW = str(data['w_username'])
+    tempW = tempW.lower()
+    Appointment = appointment.objects.create(
+        u_username = tempU,
+        w_username = tempW,
+        category = data['category'],
+        timing = data['timing'],
+        status = data['status'],
+        payment_status = data['payment_status'],
+        description = data['description'],
+        start_date = data['start_date'],
+    )
+    serializer = appointmentSerializer(Appointment,many = False)
+    return Response(serializer.data)
+
+@api_view(['PUT'])#PUT FOR UPDATE
+def updateAppointment(request,id):
+    data = request.data
+    Appointment = appointment.objects.get(appointment_id=id)
+    
+    serializer = appointmentSerializer(Appointment,data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    
+    return Response(serializer.data)

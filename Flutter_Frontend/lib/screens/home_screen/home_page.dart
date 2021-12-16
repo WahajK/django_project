@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled/screens/default_screen/default_screen.dart';
 import 'package:untitled/screens/home_screen/home_screen.dart';
-import 'package:untitled/profile_page/profile_screen.dart';
 import 'package:untitled/screens/search/search_screen.dart';
 
 class Home extends StatefulWidget {
