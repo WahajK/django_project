@@ -8,6 +8,7 @@ import 'package:untitled/screens/login_signup/resetpassword.dart';
 import 'package:http/http.dart';
 import 'package:untitled/screens/home_screen/home_page.dart';
 import 'package:untitled/screens/profile_page/userpref.dart';
+import 'package:untitled/screens/worker_screen/workerdetail.dart';
 
 //GLOBAL VARIABLE
 String url_user = "http://10.0.2.2:8000/user/"+usernamecontroller.text;
@@ -26,6 +27,7 @@ Future main() async {
 
   runApp(MyApp());
 }
+
 
 // Uri deleteUrl(String uname){
 //   Uri finalUrl = Uri.http(url+uname+"/delete/","");
@@ -73,7 +75,6 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies(){
     _retrieveUsers();
-    _retrieveWorker();
     super.didChangeDependencies();
   }
   _retrieveWorker() async
@@ -81,9 +82,13 @@ class HomeScreenState extends State<HomeScreen> {
     workers = [];
     Response uri = await get(Uri.parse(url_worker));
     List response = json.decode((uri.body));
-    response.forEach((element) {
+    int i=0;
+    debugPrint('Something');
+    for (var element in response) {
       workers.add(Worker.fromMap(element));
-    });
+      debugPrint(workers[i].username);
+      i++;
+    }
     workers.toSet().toList();
   }
   _retrieveUsers() async
@@ -217,9 +222,12 @@ class HomeScreenState extends State<HomeScreen> {
                       // }
                       for(var map in users)
                       {
-                        debugPrint(map.username);
                         if(map.username.toLowerCase()==usernamecontroller.text.toLowerCase() && map.password==passcontroller.text)
                         {
+                          for(var maps in workers)
+                          {
+                            debugPrint(maps.username);
+                          }
                           temp=true;
                           Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => Home()));

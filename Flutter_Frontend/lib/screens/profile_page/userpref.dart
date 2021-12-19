@@ -10,12 +10,12 @@ class UserPreferences {
 
   static const _keyUser = 'user';
   static final myUser = User(
-    imagePath:users[0].image.substring(1,users[0].image.length)
+    imagePath:"Django_Backend"+users[0].image,
     // 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80',
 
   );
   Future<String> loadAsset() async {
-  return await rootBundle.loadString(users[0].image.substring(1,users[0].image.length));
+  return await rootBundle.loadString("Django_Backend"+users[0].image);
 }
   static Future init() async =>
       _preferences = await SharedPreferences.getInstance();

@@ -5,7 +5,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled/main.dart';
 import 'package:untitled/models/worker_model.dart';
+import 'package:untitled/screens/worker_screen/workerdetail.dart';
 
+late Worker tappedWorker;
 class GridCard extends StatefulWidget {
   final Worker workers;
 
@@ -14,13 +16,22 @@ class GridCard extends StatefulWidget {
   @override
   State<GridCard> createState() => _GridCardState();
 }
-
+class AppointmentApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.white, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: const Color(0xff2B7EFF)),
+      ),
+      home: workerdetail(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
 class _GridCardState extends State<GridCard> {
-  var _isFavorite = false;
 
   @override
   void initState() {
-    // _isFavorite = widget.product.isFavorite;
     super.initState();
   }
 
@@ -28,11 +39,13 @@ class _GridCardState extends State<GridCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(
-        //     builder: (ctx) => ProductDetailScreen(product: widget.product),
-        //   ),
-        // );
+        tappedWorker = widget.workers;
+        debugPrint(widget.workers.fname);
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctx) => AppointmentApp(),
+          ),
+        );
       },
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -48,7 +61,7 @@ class _GridCardState extends State<GridCard> {
             Row(
               children: [
                 SvgPicture.asset(
-                  widget.workers.image.substring(1,widget.workers.image.length),
+                  "Django_Backend"+widget.workers.image,
                   height: 20,
                   width: 20,
                 ),
@@ -69,14 +82,14 @@ class _GridCardState extends State<GridCard> {
             ),
             Expanded(
               child: Hero(
-                tag: widget.workers.image.substring(1,widget.workers.image.length),
+                tag: "Django_Backend"+widget.workers.image,
                 child: Container(
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     image: DecorationImage(
                       image: AssetImage(      ///changes image
-                        widget.workers.image.substring(1,widget.workers.image.length),
+                        "Django_Backend"+widget.workers.image,
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -89,9 +102,9 @@ class _GridCardState extends State<GridCard> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      '€100',
-                      style: TextStyle(
+                    Text(
+                      widget.workers.fname,
+                      style: const TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 18,
                       ),
@@ -99,7 +112,7 @@ class _GridCardState extends State<GridCard> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .25,
                       child: Text(
-                        widget.workers.fname,
+                        widget.workers.category,
                         style: const TextStyle(
                           color: Colors.grey,
                         ),
@@ -110,19 +123,15 @@ class _GridCardState extends State<GridCard> {
                   ],
                 ),
                 const Spacer(),
-                IconButton(
-                  icon: _isFavorite
-                      ? const Icon(
-                          Icons.favorite,
-                          color: Colors.red,
-                        )
-                      : const Icon(Icons.favorite_border_outlined),
-                  onPressed: () {
-                    setState(() {
-                      _isFavorite = !_isFavorite;
-                    });
-                  },
-                ),
+                // IconButton(
+                //   icon: const Icon(
+                //           Icons.arrow_right,
+                //           color: Colors.red,
+                //         ),
+                //   onPressed: () {
+                    
+                //   },
+                // ),
               ],
             ),
           ],
