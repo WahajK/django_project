@@ -1,0 +1,52 @@
+name: worker
+description: A new Flutter project.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter_settings_screens: ^0.2.2+1
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.3
+
+  flutter_svg: ^0.22.0 # help us to use SVG in our app
+  #provider: ^6.0.0 # for State management
+  shared_preferences: ^2.0.5
+
+    # pick image
+  image_picker: ^0.7.4
+
+  dot_navigation_bar: ^1.0.1+3
+    # store image
+  path_provider: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
+# The following section is specific to Flutter.
+flutter:
+
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/muli/Muli.ttf
+        - asset: assets/fonts/muli/Muli-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/muli/Muli-Light.ttf
+          weight: 300
